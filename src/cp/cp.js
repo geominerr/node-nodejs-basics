@@ -23,14 +23,9 @@ const spawnChildProcess = async (args) => {
       console.error(`Error: ${err.message}`);
     });
 
-  process.stdin
-    .on('end', () => {
-      console.log('sdfdsfsdfsfd');
-      childProcess.stdin.end();
-    })
-    .on('error', (err) => {
-      console.error(`Error: ${err.message}`);
-    });
+  process.stdin.on('error', (err) => {
+    console.error(`Error: ${err.message}`);
+  });
 };
 
 spawnChildProcess(
