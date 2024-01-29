@@ -52,7 +52,9 @@ const copy = async () => {
         )
     );
   } catch (err) {
-    console.error(err);
+    if (err instanceof CustomError) {
+      throw err;
+    }
   }
 };
 
